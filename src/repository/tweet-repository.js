@@ -11,7 +11,7 @@ class tweetRepository{
     }
     async get(id){
         try{
-        const Tweet=await tweet.findById(id);
+        const Tweet=await tweet.findById(id).populate({path:'likes'});
         return Tweet;
         }catch(error){
            console.log(error)

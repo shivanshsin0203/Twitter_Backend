@@ -25,5 +25,13 @@ class tweetRepository{
             console.log(error)
         }
     }
+    async find(id){
+        try{
+        const Tweet=await tweet.findById(id);
+        return Tweet;
+        }catch(error){
+           console.log(error)
+        }
+    }
 }
 module.exports=tweetRepository;
